@@ -9,7 +9,7 @@ source:
   url:
     - http://cran.r-project.org/src/contrib/pbdZMQ_{{ version }}.tar.gz
     - http://cran.r-project.org/src/contrib/Archive/pbdZMQ/pbdZMQ_{{ version }}.tar.gz
-  sha256: bfacac88b0d4156c70cf63fc4cb9969a950693996901a4fa3dcd59949ec065f6
+  sha256: e73f882ba2f882ef6ef2280cd19fc4e2010701cff1ae3ebab2ebb29c16f63fbb
 
 build:
   number: 0
