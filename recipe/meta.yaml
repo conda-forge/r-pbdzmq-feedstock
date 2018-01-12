@@ -1,4 +1,4 @@
-{% set version = "0.2-4" %}
+{% set version = "0.3-1" %}
 
 package:
   name: r-pbdzmq
@@ -9,7 +9,7 @@ source:
   url:
     - http://cran.r-project.org/src/contrib/pbdZMQ_{{ version }}.tar.gz
     - http://cran.r-project.org/src/contrib/Archive/pbdZMQ/pbdZMQ_{{ version }}.tar.gz
-  sha256: bfacac88b0d4156c70cf63fc4cb9969a950693996901a4fa3dcd59949ec065f6
+  sha256: e82039ca02c6275298d0099317d7c9a3c628d7f6954c24298b954718b00b5b13
 
 build:
   number: 0
