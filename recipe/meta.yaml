@@ -1,4 +1,4 @@
-{% set version = "0.3-1" %}
+{% set version = "0.3-2" %}
 
 package:
   name: r-pbdzmq
@@ -9,7 +9,7 @@ source:
   url:
     - http://cran.r-project.org/src/contrib/pbdZMQ_{{ version }}.tar.gz
     - http://cran.r-project.org/src/contrib/Archive/pbdZMQ/pbdZMQ_{{ version }}.tar.gz
-  sha256: e82039ca02c6275298d0099317d7c9a3c628d7f6954c24298b954718b00b5b13
+  sha256: ece2a2881c662f77126e4801ba4e01c991331842b0d636ce5a2b591b9de3fc37
 
 build:
   number: 0
@@ -30,11 +30,11 @@ requirements:  # [not win32]
     - pkg-config  # [not win]
     - m2w64-toolchain  # [win64]
     - gcc  # [not win]
-    - zeromq 4.1.*  # [not win]
+    - zeromq 4.2.*  # [not win]
   run:  # [not win32]
     - r-base  # [not win32]
     - r-r6  # [not win32]
-    - zeromq 4.1.*  # [not win]
+    - zeromq 4.2.*  # [not win]
 
 test:
   commands:
