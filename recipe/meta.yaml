@@ -12,7 +12,7 @@ source:
   sha256: ece2a2881c662f77126e4801ba4e01c991331842b0d636ce5a2b591b9de3fc37
 
 build:
-  number: 0
+  number: 1000
   skip: True  # [win32]
   script: R CMD INSTALL --build .
   rpaths:
