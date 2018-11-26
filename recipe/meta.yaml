@@ -1,56 +1,70 @@
-{% set version = "0.3-2" %}
+{% set version = '0.3-3' %}
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-pbdzmq
-  version: {{ version.replace("-", "_") }}
+  version: {{ version|replace("-", "_") }}
 
 source:
-  fn: pbdZMQ_{{ version }}.tar.gz
   url:
-    - http://cran.r-project.org/src/contrib/pbdZMQ_{{ version }}.tar.gz
-    - http://cran.r-project.org/src/contrib/Archive/pbdZMQ/pbdZMQ_{{ version }}.tar.gz
-  sha256: ece2a2881c662f77126e4801ba4e01c991331842b0d636ce5a2b591b9de3fc37
+    - {{ cran_mirror }}/src/contrib/pbdZMQ_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/pbdZMQ/pbdZMQ_{{ version }}.tar.gz
+  sha256: ae26c13400e2acfb6463ff9b67156847a22ec79f3b53baf65119efaba1636eca
 
 build:
+  merge_build_host: True  # [win]
   number: 0
-  skip: True  # [win32]
-  script: R CMD INSTALL --build .
   rpaths:
     - lib/R/lib/
     - lib/
 
-# unlike r-rzmq, this package pre-bakes a whole set of Windows
-# Makefiles, and so it doesn't depend on our shared
-# m2-mingw-w64-zeromq package. This is beyond horrible.
-requirements:  # [not win32]
-  build:  # [not win32]
-    - r-base  # [not win32]
-    - r-r6  # [not win32]
-    - posix  # [win64]
-    - pkg-config  # [not win]
-    - m2w64-toolchain  # [win64]
-    - gcc  # [not win]
-    - zeromq 4.2.*  # [not win]
-  run:  # [not win32]
-    - r-base  # [not win32]
-    - r-r6  # [not win32]
-    - zeromq 4.2.*  # [not win]
+requirements:
+  build:
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}sed               # [win]
+    - {{posix}}grep              # [win]
+    - {{posix}}autoconf
+    - {{posix}}automake          # [not win]
+    - {{posix}}automake-wrapper  # [win]
+    - {{posix}}pkg-config
+    - {{posix}}make
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
+  host:
+    - r-base
+    - zeromq 4.2.*               # [not win]
+  run:
+    - r-base
+    - {{native}}gcc-libs         # [win]
+    - zeromq 4.2.*               # [not win]
 
 test:
   commands:
-    - R -e "library('pbdZMQ')"  # [not win]
-    - R -e \"library('pbdZMQ')\"  # [win]
+    - $R -e "library('pbdZMQ')"           # [not win]
+    - "\"%R%\" -e \"library('pbdZMQ')\""  # [win]
 
 about:
   home: http://r-pbd.org/
-  license: GPL-3.0
-  summary: "ZeroMQ' is a well-known library for high-performance asynchronous messaging in
+  license: GPL-3
+  summary: "'ZeroMQ' is a well-known library for high-performance asynchronous messaging in
     scalable, distributed applications.  This package provides high level R wrapper
     functions to easily utilize 'ZeroMQ'. We mainly focus on interactive client/server
-    programming frameworks. For convenience, a minimal 'ZeroMQ' library (4.1.0 rc1)
-    is shipped with 'pbdZMQ', which can be used if no system installation of 'ZeroMQ'
-    is available.  A few wrapper functions compatible with 'rzmq' are also provided."
+    programming frameworks. For convenience, a minimal 'ZeroMQ' library (4.2.2) is
+    shipped with 'pbdZMQ', which can be used if no system installation of 'ZeroMQ'
+    is available. A few wrapper functions compatible with 'rzmq' are also provided."
+  license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
     - ocefpaf
+    - johanneskoester
+    - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
