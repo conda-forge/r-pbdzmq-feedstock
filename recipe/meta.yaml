@@ -19,9 +19,6 @@ build:
     - lib/R/lib/
     - lib/
 
-# unlike r-rzmq, this package pre-bakes a whole set of Windows
-# Makefiles, and so it doesn't depend on our shared
-# m2-mingw-w64-zeromq package. This is beyond horrible.
 requirements:
   build:
     - {{ compiler('c') }}        # [not win]
@@ -39,11 +36,13 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
-    - zeromq  # [not win]
+    - zeromq                     # [not win]
+    - {{native}}zeromq 4.1.*     # [win]
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
-    - zeromq  # [not win]
+    - zeromq                     # [not win]
+    - {{native}}zeromq 4.1.*     # [win]
 
 test:
   commands:
@@ -65,6 +64,7 @@ about:
 extra:
   recipe-maintainers:
     - ocefpaf
+    - mingwandroid
     - johanneskoester
     - bgruening
     - daler
