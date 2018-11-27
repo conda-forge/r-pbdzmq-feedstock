@@ -1,4 +1,4 @@
-{% set version = "0.3-2" %}
+{% set version = '0.3-3' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pbdZMQ_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pbdZMQ/pbdZMQ_{{ version }}.tar.gz
-  sha256: ece2a2881c662f77126e4801ba4e01c991331842b0d636ce5a2b591b9de3fc37
+  sha256: ae26c13400e2acfb6463ff9b67156847a22ec79f3b53baf65119efaba1636eca
 
 build:
   merge_build_host: True  # [win]
