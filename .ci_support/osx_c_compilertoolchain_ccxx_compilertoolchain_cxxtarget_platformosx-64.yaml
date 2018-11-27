@@ -1,13 +1,17 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 build_number_decrement:
-- '0'
+- '1000'
+c_compiler:
+- toolchain_c
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
-docker_image:
-- condaforge/linux-anvil
+cran_mirror:
+- https://cran.r-project.org
+cxx_compiler:
+- toolchain_cxx
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
@@ -15,9 +19,17 @@ macos_min_version:
 pin_run_as_build:
   r-base:
     max_pin: x.x.x
+  zeromq:
+    max_pin: x.x
 r_base:
 - 3.5.1
+target_platform:
+- osx-64
+zeromq:
+- 4.2.5
 zip_keys:
-- - channel_sources
+- - c_compiler
+  - cxx_compiler
+  - channel_sources
   - channel_targets
   - build_number_decrement
