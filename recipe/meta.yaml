@@ -63,11 +63,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - conda-forge/r
     - ocefpaf
     - mingwandroid
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
