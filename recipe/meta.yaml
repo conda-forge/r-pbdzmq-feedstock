@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 1000
+  number: 1001
   rpaths:
     - lib/R/lib/
     - lib/
@@ -36,13 +36,11 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
-    - zeromq                     # [not win]
-    - {{native}}zeromq 4.1.*     # [win]
+    - zeromq
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
-    - zeromq                     # [not win]
-    - {{native}}zeromq 4.1.*     # [win]
+    - zeromq
 
 test:
   commands:
@@ -63,11 +61,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - conda-forge/r
     - ocefpaf
     - mingwandroid
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast

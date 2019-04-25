@@ -7,7 +7,11 @@ cran_mirror:
 pin_run_as_build:
   r-base:
     max_pin: x.x.x
+  zeromq:
+    max_pin: x.x
 r_base:
 - 3.5.1
 target_platform:
 - win-64
+zeromq:
+- 4.3.1
