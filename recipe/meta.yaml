@@ -36,13 +36,11 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
-    - zeromq                     # [not win]
-    - {{native}}zeromq 4.1.*     # [win]
+    - zeromq
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
-    - zeromq                     # [not win]
-    - {{native}}zeromq 4.1.*     # [win]
+    - zeromq
 
 test:
   commands:
