@@ -20,7 +20,8 @@ macos_min_version:
 - '10.9'
 pin_run_as_build:
   r-base:
-    max_pin: x.x.x
+    min_pin: x.x
+    max_pin: x.x
   zeromq:
     max_pin: x.x
 r_base:
@@ -28,4 +29,4 @@ r_base:
 target_platform:
 - osx-64
 zeromq:
-- 4.3.1
+- 4.3.2
