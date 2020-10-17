@@ -5,11 +5,9 @@ Home: http://r-pbd.org/
 
 Package license: GPL-3
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-pbdzmq-feedstock/blob/master/LICENSE.txt)
 
 Summary: 'ZeroMQ' is a well-known library for high-performance asynchronous messaging in scalable, distributed applications.  This package provides high level R wrapper functions to easily utilize 'ZeroMQ'. We mainly focus on interactive client/server programming frameworks. For convenience, a minimal 'ZeroMQ' library (4.2.2) is shipped with 'pbdZMQ', which can be used if no system installation of 'ZeroMQ' is available.  A few wrapper functions compatible with 'rzmq' are also provided.
-
-
 
 Current build status
 ====================
@@ -36,6 +34,20 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
+              <td>linux_64_r_base3.6target_platformlinux-64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5209&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=linux&configuration=linux_64_r_base3.6target_platformlinux-64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_r_base4.0target_platformlinux-64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5209&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=linux&configuration=linux_64_r_base4.0target_platformlinux-64" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>linux_aarch64_r_base3.6target_platformlinux-aarch64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5209&branchName=master">
@@ -64,45 +76,31 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_r_base3.6target_platformlinux-64</td>
+              <td>osx_64_r_base3.6target_platformosx-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5209&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=linux&configuration=linux_r_base3.6target_platformlinux-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=osx&configuration=osx_64_r_base3.6target_platformosx-64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_r_base4.0target_platformlinux-64</td>
+              <td>osx_64_r_base4.0target_platformosx-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5209&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=linux&configuration=linux_r_base4.0target_platformlinux-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=osx&configuration=osx_64_r_base4.0target_platformosx-64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_r_base3.6target_platformosx-64</td>
+              <td>win_64_r_base3.6target_platformwin-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5209&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=osx&configuration=osx_r_base3.6target_platformosx-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=win&configuration=win_64_r_base3.6target_platformwin-64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_r_base4.0target_platformosx-64</td>
+              <td>win_64_r_base4.0target_platformwin-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5209&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=osx&configuration=osx_r_base4.0target_platformosx-64" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_r_base3.6target_platformwin-64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5209&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=win&configuration=win_r_base3.6target_platformwin-64" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_r_base4.0target_platformwin-64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5209&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=win&configuration=win_r_base4.0target_platformwin-64" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-pbdzmq-feedstock?branchName=master&jobName=win&configuration=win_64_r_base4.0target_platformwin-64" alt="variant">
                 </a>
               </td>
             </tr>
