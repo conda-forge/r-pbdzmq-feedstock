@@ -1,4 +1,4 @@
-{% set version = '0.3-3' %}
+{% set version = "0.3-3.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pbdZMQ_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pbdZMQ/pbdZMQ_{{ version }}.tar.gz
-  sha256: ae26c13400e2acfb6463ff9b67156847a22ec79f3b53baf65119efaba1636eca
+  sha256: 9e034745cd9c1bdf510a2ec8e7060501abc92ec86020c430ed7e36f5d5cf1523
 
 build:
-  merge_build_host: True  # [win]
-  number: 1003
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -51,14 +51,10 @@ test:
 about:
   home: http://r-pbd.org/
   license: GPL-3
-  summary: "'ZeroMQ' is a well-known library for high-performance asynchronous messaging in
-    scalable, distributed applications.  This package provides high level R wrapper
-    functions to easily utilize 'ZeroMQ'. We mainly focus on interactive client/server
-    programming frameworks. For convenience, a minimal 'ZeroMQ' library (4.2.2) is
-    shipped with 'pbdZMQ', which can be used if no system installation of 'ZeroMQ'
-    is available.  A few wrapper functions compatible with 'rzmq' are also provided."
+  summary: "'ZeroMQ' is a well-known library for high-performance asynchronous messaging in scalable, distributed applications.  This package provides high level R wrapper functions to easily utilize 'ZeroMQ'. We mainly focus on interactive client/server programming frameworks. For convenience, a minimal 'ZeroMQ' library\
+    \ (4.2.2) is shipped with 'pbdZMQ', which can be used if no system installation of 'ZeroMQ' is available.  A few wrapper functions compatible with 'rzmq' are also provided."
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
