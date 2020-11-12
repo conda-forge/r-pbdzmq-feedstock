@@ -2,6 +2,8 @@ c_compiler:
 - gcc
 c_compiler_version:
 - '7'
+cdt_name:
+- cos6
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -13,7 +15,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '7'
 docker_image:
-- condaforge/linux-anvil-comp7
+- quay.io/condaforge/linux-anvil-comp7
 pin_run_as_build:
   r-base:
     min_pin: x.x
@@ -25,7 +27,7 @@ r_base:
 target_platform:
 - linux-64
 zeromq:
-- 4.3.2
+- 4.3.3
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version

@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -50,11 +50,12 @@ test:
 
 about:
   home: http://r-pbd.org/
-  license: GPL-3
+  license: GPL-3.0-only
   summary: "'ZeroMQ' is a well-known library for high-performance asynchronous messaging in scalable, distributed applications.  This package provides high level R wrapper functions to easily utilize 'ZeroMQ'. We mainly focus on interactive client/server programming frameworks. For convenience, a minimal 'ZeroMQ' library\
     \ (4.2.2) is shipped with 'pbdZMQ', which can be used if no system installation of 'ZeroMQ' is available.  A few wrapper functions compatible with 'rzmq' are also provided."
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
