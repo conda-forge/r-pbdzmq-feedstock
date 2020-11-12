@@ -19,4 +19,4 @@ r_base:
 target_platform:
 - win-64
 zeromq:
-- 4.3.2
+- 4.3.3
