@@ -15,7 +15,7 @@ pin_run_as_build:
   zeromq:
     max_pin: x.x.x
 r_base:
-- '3.6'
+- '4.1'
 target_platform:
 - win-64
 zeromq:
