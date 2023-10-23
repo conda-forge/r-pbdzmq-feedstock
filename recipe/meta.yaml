@@ -58,8 +58,6 @@ test:
     - "\"%R%\" -f tests/ports.R"           # [win]
     - "\"%R%\" -f tests/send_recv.R"       # [win]
     - "\"%R%\" -f tests/send_recv_rzmq.R"  # [win]
-  downstreams:
-    - r-irkernel
 
 about:
   home: http://r-pbd.org/
