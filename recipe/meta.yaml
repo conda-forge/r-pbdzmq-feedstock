@@ -1,4 +1,4 @@
-{% set version = "0.3-13" %}
+{% set version = "0.3-14" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pbdZMQ_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pbdZMQ/pbdZMQ_{{ version }}.tar.gz
-  sha256: 4139a88323642b734a83a8d73ea34550f8ef279389e794a5a3a5f3e8f579839a
+  sha256: 60154f66db9378655d7c39c8c2e02e74ac6bd801a9aac1bc73003c7eeeb23223
 
 build:
   number: 0
